@@ -2,8 +2,6 @@ package wc3.tests
 
 
 import com.codeborne.selenide.Configuration
-import org.openqa.selenium.chrome.ChromeDriver
-import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.*
 import org.junit.jupiter.api.*
 import wc3.pages.Steps
@@ -12,7 +10,6 @@ class BasicTests {
     var steps = Steps()
     @BeforeEach
     fun openSite() {
-        val hostname = System.getProperty("HUB_HOST")
         Configuration.remote = "http://host.docker.internal:4444/wd/hub";
         Configuration.browser = "chrome";
         open("https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all")
