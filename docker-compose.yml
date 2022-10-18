@@ -1,0 +1,20 @@
+version: "3"
+services:
+
+  tests:
+    image: ll
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - chrome
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  chrome:
+    image: selenium/standalone-chrome:latest
+    shm_size: 2gb
+    ports:
+      - "4444:4444"
+
+
